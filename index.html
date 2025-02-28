@@ -4,42 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background:  radial-gradient(circle at top right, #2b3d4f,grey);
-            animation: animate 3s linear infinite;
-            color: white;
-        }
+          font-family: "Inter", serif;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient( #5d7996, white);
+          color: white;
+        
+          background-size: cover; 
+          background-attachment: fixed; 
+          height: 100vh;
+		}
         .randomText{
      		position: fixed; /* Ensures it stays in place */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            text-align: center;
             font-size: 3vw;
             text-transform: uppercase;
             letter-spacing: 10px;
             font-weight: bold;
+            opacity: 40%;
             word-spacing: 40px; /* Adds space between words */
             white-space: nowrap; 
             overflow: hidden;
             z-index: -1; /* Moves it behind all other content */
-            background: linear-gradient(90deg, #354a5f, #5d6d7e, #354a5f);
+            background: linear-gradient(180deg, #354a5f, white, #354a5f);
             background-repeat: no-repeat;
             background-size: 80%;
-            animation: animate 3s linear infinite;
+            animation: animate 3s ease-in-out infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: rgba(255, 255, 255, 0);
         
         }
          @keyframes animate {
             0% {
-                background-position: -500%;
+               /* background-position: -500%;*/
+                 opacity: 40%;
+                 
+            }
+            50%{
+            opacity: 10%;
             }
             100% {
-                background-position: 500%;
+                /*background-position: 500%;*/
+                 opacity: 40%;
+                 
             }
         }
         
@@ -70,30 +84,79 @@
             background: #5d6d7e;
             border-radius: 5px;
         }
+        h1 {
+        	 font-size: 5vw;
+    		font-family: 'Space Grotesk', sans-serif;
+           
+		}
+                nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
-<div class ="randomText">
-	<p>C# Inky Python p5js Jira Clickup C# Inky </p>
-    <p>3D Character Movement C++ Unreal 3D Prototype</p>
-    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
-   	<p>Video editing adobe suite Python blueprint</p>
-    <p>CVzone inverse kinematics sound design </p>
-    <p>C# Inky Python p5js Jira Clickup C# Inky</p>
-    <p>3D Character Movement C++ Unreal prototype</p>
-    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
-   	<p>Video editing adobe suite Python blueprint</p>
-    <p>CVzone inverse kinematics sound design </p>
-    <p>C# Inky Python p5js Jira Clickup C# inky</p>
-    <p>3D Character Movement C++ Unreal 3D prototype</p>
-    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
-   	<p>Video editing adobe suite Python blueprint</p>
-    <p>CVzone inverse kinematics sound design </p>
-    
-</div>
+  <div class ="randomText">
+      <p>C# Inky Python p5js Jira Clickup C# Inky </p>
+      <p>3D Character Movement C++ Unreal 3D Prototype</p>
+      <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+      <p>Video editing adobe suite Python blueprint</p>
+      <p>CVzone inverse kinematics sound design </p>
+      <p>C# Inky Python p5js Jira Clickup C# Inky</p>
+      <p>3D Character Movement C++ Unreal prototype</p>
+      <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+      <p>Video editing adobe suite Python blueprint</p>
+      <p>CVzone inverse kinematics sound design </p>
+      <p>C# Inky Python p5js Jira Clickup C# inky</p>
+      <p>3D Character Movement C++ Unreal  gobbly gook 3D prototype</p>
+      <p>Twine JavaScript Unity  HTML 2D pixel art</p>
+      <p>Video editing adobe suite Python blueprint</p>
+      <p>CVzone inverse kinematics sound design </p>
+       <p>C# Inky Python p5js Jira Clickup C# inky</p>
+      <p>3D Character Movement C++ Unreal 3D prototype</p>
+      <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+      <p>Video editing adobe suite Python blueprint</p>
+      <p>CVzone inverse kinematics sound design </p>
+
+  </div>
+  	<div class= "">
+     <nav>
+          <ul>
+              <li><h1>Jasmine Darman</h1></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+     </div>
     <div class="header">
-        <h1>Jasmine Darman</h1>
-        <img src="https://i.ibb.co/cL2mLny/portrait.png" alt="portrait" width="300px">
+      
+       
         <p>About me: I make video games. This portfolio showcases my work in p5.js from my Digital Media master's program.</p>
     </div>
     <div class="work-container" id="portfolio"></div>
