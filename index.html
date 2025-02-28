@@ -9,96 +9,139 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background:  radial-gradient(circle at top right, #2b3d4f,grey);
+            animation: animate 3s linear infinite;
+            color: white;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 50px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
-        .work{
-          height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        .randomText{
+     		position: fixed; /* Ensures it stays in place */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3vw;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: bold;
+            word-spacing: 40px; /* Adds space between words */
+            white-space: nowrap; 
+            overflow: hidden;
+            z-index: -1; /* Moves it behind all other content */
+            background: linear-gradient(90deg, #354a5f, #5d6d7e, #354a5f);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
         
         }
-        .work.show{
-            opacity: 1;
-            transform: translateY(0);
+         @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+            100% {
+                background-position: 500%;
+            }
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .work-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .category {
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .work-list {
+            display: none;
+            padding: 10px;
+        }
+        .work-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #5d6d7e;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+<div class ="randomText">
+	<p>C# Inky Python p5js Jira Clickup C# Inky </p>
+    <p>3D Character Movement C++ Unreal 3D Prototype</p>
+    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+   	<p>Video editing adobe suite Python blueprint</p>
+    <p>CVzone inverse kinematics sound design </p>
+    <p>C# Inky Python p5js Jira Clickup C# Inky</p>
+    <p>3D Character Movement C++ Unreal prototype</p>
+    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+   	<p>Video editing adobe suite Python blueprint</p>
+    <p>CVzone inverse kinematics sound design </p>
+    <p>C# Inky Python p5js Jira Clickup C# inky</p>
+    <p>3D Character Movement C++ Unreal 3D prototype</p>
+    <p>Twine JavaScript  Unity  HTML 2D pixel art</p>
+   	<p>Video editing adobe suite Python blueprint</p>
+    <p>CVzone inverse kinematics sound design </p>
+    
+</div>
+    <div class="header">
         <h1>Jasmine Darman</h1>
-        <div><img src="https://i.ibb.co/cL2mLny/portrait.png" alt="portrait" border="0"width="500px" height="600px"></div>
-        <p>About me: I make video games. The work here is what I've been working on in Intro to programming for my masters in Digital Media. All of it is done painfully in p5js. </p>
-        <div class="work">
-            <h2>Glaucia Interview </h2>
-            <iframe src="https://editor.p5js.org/Linocut/full/P7oC6vT-J" width="410px" height="450px"></iframe>
-            
-            <p>This game was created using an object oriented approach to dialog systems. It contains two main classes: messages and choices. The current message is displayed and changed based on clicks.</p>
-            <a href="https://github.com/Linocut/GlauciaInterview"> Github link </a>  
-            <div><a href="https://editor.p5js.org/Linocut/sketches/J8rpw8owB"> p5js link Code </a></div>
-        </div>
-        <div class="work">
-            <h2>Up and Down</h2>
-            <iframe src="https://editor.p5js.org/Linocut/full/vWwlNnLp7" width="810px" height="810px"></iframe>
-            
-            <p>This game expands on the dialog classes to only trigger within dialog events. The game adds grid based, collision, animation, and map changes. It uses code from <a href= "https://happycoding.io/tutorials/processing/collision-detection#grid-based-collision-detection"> Happy Coding io.</a> as a grid collison base. </p>
-            <a href="https://github.com/Linocut/Adventure-Game"> Github link </a>  
-            <div><a href="https://editor.p5js.org/Linocut/sketches/vWwlNnLp7"> p5js link Code </a></div>
-        </div>
-        <div class="work">
-            <h2>Spaceland Coded</h2>
-            <iframe src="https://editor.p5js.org/Linocut/full/i2lsaI5dY" width="500px" height="500px"></iframe>
-            
-            <p>A VR art experience that plays with scaling, motion and lighting. Uses the A frame library.</p>
-            <a href="https://github.com/Linocut/P5js-3D"> Github link </a>  
-            <div><a href="https://editor.p5js.org/Linocut/sketches/i2lsaI5dY"> p5js link Code </a></div>
-        </div>
-        <div class="work">
-            <h2>Work Worries</h2>
-            <iframe src="https://editor.p5js.org/Linocut/full/Byuvz_xaT" width="800px" height="500px"></iframe>
-            
-            <p>Work Worries was made using the dialog system from Glaucia interview. It adds more characters, environments, and length. It was designed for the class Media Aesthetics.</p>
-            <a href="https://github.com/Linocut/WorkWorries-VisualNovel"> Github link </a>  
-            <div><a href="https://editor.p5js.org/Linocut/sketches/Byuvz_xaT"> p5js link Code </a></div>
-        </div>
-        
-        
-        
+        <img src="https://i.ibb.co/cL2mLny/portrait.png" alt="portrait" width="300px">
+        <p>About me: I make video games. This portfolio showcases my work in p5.js from my Digital Media master's program.</p>
     </div>
-
+    <div class="work-container" id="portfolio"></div>
     <script>
-        const sections = document.querySelectorAll('.work');
+        const workCategories = [
+            { name: "Dialog Systems", color: "#85c1ae", works: [
+                { title: "Glaucia Interview", link: "https://editor.p5js.org/Linocut/full/P7oC6vT-J", github: "https://github.com/Linocut/GlauciaInterview", description: "An object-oriented approach to dialog systems." }
+            ]},
+            { name: "Grid-Based Games", color: "#008b8b", works: [
+                { title: "Up and Down", link: "https://editor.p5js.org/Linocut/full/vWwlNnLp7", github: "https://github.com/Linocut/Adventure-Game", description: "Expands dialog classes with collision, animation, and map changes." }
+            ]},
+            { name: "VR and 3D", color: "#9932cc", works: [
+                { title: "Spaceland Coded", link: "https://editor.p5js.org/Linocut/full/i2lsaI5dY", github: "https://github.com/Linocut/P5js-3D", description: "A VR art experience exploring motion and lighting." }
+            ]}
+        ];
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
+        const portfolioContainer = document.getElementById("portfolio");
+
+        workCategories.forEach(category => {
+       		 
+            
+            const categoryDiv = document.createElement("div");
+            categoryDiv.classList.add("category");
+            categoryDiv.style.backgroundColor = category.color;
+            categoryDiv.innerHTML = `<h2>${category.name}</h2>`;
+            portfolioContainer.appendChild(categoryDiv);
+			
+            const workList = document.createElement("div");
+            workList.classList.add("work-list");
+            categoryDiv.appendChild(workList);
+
+            category.works.forEach(work => {
+                const workItem = document.createElement("div");
+                workItem.classList.add("work-item");
+                workItem.innerHTML = `
+                    <h3>${work.title}</h3>
+                    <p>${work.description}</p>
+                    <a href="${work.link}" target="_blank">Play</a> | 
+                    <a href="${work.github}" target="_blank">GitHub</a>
+                `;
+                workList.appendChild(workItem);
             });
-        }, { threshold: 0.2 });
+       
 
-        sections.forEach(section => observer.observe(section));
+            categoryDiv.addEventListener("click", () => {
+                workList.style.display = workList.style.display === "block" ? "none" : "block";
+            });
+        });
     </script>
 </body>
 </html>
