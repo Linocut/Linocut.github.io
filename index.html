@@ -11,13 +11,17 @@
           font-family: "Inter", serif;
           margin: 0;
           padding: 0;
-          background: linear-gradient( #5d7996, white);
+          background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a);
+          background-size: 400% 400%;
+          animation: gradientShift 8s ease-in-out infinite;
           color: white;
+          min-height: 100vh;
+        }
         
-          background-size: cover; 
-          background-attachment: fixed; 
-          height: 100vh;
-		}
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
         .randomText{
      		position: fixed; /* Ensures it stays in place */
             top: 50%;
@@ -28,32 +32,28 @@
             text-transform: uppercase;
             letter-spacing: 10px;
             font-weight: bold;
-            opacity: 40%;
+            opacity: 15%;
             word-spacing: 40px; /* Adds space between words */
             white-space: nowrap; 
             overflow: hidden;
             z-index: -1; /* Moves it behind all other content */
-            background: linear-gradient(180deg, #354a5f, white, #354a5f);
+            background: linear-gradient(180deg, #333333, #666666, #333333);
             background-repeat: no-repeat;
             background-size: 80%;
-            animation: animate 3s ease-in-out infinite;
+            animation: animate 6s ease-in-out infinite;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: rgba(255, 255, 255, 0);
-        
         }
          @keyframes animate {
             0% {
-               /* background-position: -500%;*/
-                 opacity: 40%;
-                 
+                opacity: 15%;
             }
             50%{
-            opacity: 10%;
+                opacity: 5%;
             }
             100% {
-                /*background-position: 500%;*/
-                 opacity: 40%;
-                 
+                opacity: 15%;
             }
         }
         
@@ -61,61 +61,1067 @@
             text-align: center;
             padding: 20px;
         }
+        /* Works Section Styles */
+        .works-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-container {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .work-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
         }
+
         .category {
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            border-radius: 15px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
+
+        .category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .category h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
         .work-list {
             display: none;
-            padding: 10px;
+            padding: 20px 0 0 0;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .work-item {
-            margin: 10px 0;
-            padding: 10px;
-            background: #5d6d7e;
-            border-radius: 5px;
+            margin: 15px 0;
+            padding: 20px;
+            background: rgba(45, 45, 45, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .work-item:hover {
+            background: rgba(55, 55, 55, 0.9);
+            transform: translateX(5px);
+        }
+
+        .work-item h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .work-item p {
+            margin: 0 0 15px 0;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        .work-item a {
+            color: #70a1ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .work-item a:hover {
+            color: #5882ff;
+            text-decoration: underline;
         }
         h1 {
         	 font-size: 5vw;
     		font-family: 'Space Grotesk', sans-serif;
            
 		}
-                nav {
-            background-color: #333;
-            padding: 10px;
+        nav {
+            background-color: rgba(26, 26, 26, 0.9);
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 15px 15px;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .nav-container {
             display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            padding-left: 20px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(45, 45, 45, 0.8);
+            border: none;
+            border-radius: 10px;
+            padding: 8px 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: rgba(65, 65, 65, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .back-arrow {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .back-text {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .nav-menu {
+            position: fixed;
+            left: -300px;
+            top: 70px;
+            flex-direction: column;
+            background-color: rgba(26, 26, 26, 0.95);
+            width: 300px;
+            text-align: left;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+            border-radius: 0 15px 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            height: calc(100vh - 70px);
+            padding: 20px 0;
+        }
+
+        .nav-menu.active {
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu li a {
+            padding: 15px 25px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                left: -100%;
+                width: 100%;
+                text-align: center;
+                border-radius: 0 0 15px 15px;
+            }
+            
+            .nav-menu li a {
+                text-align: center;
+                padding: 15px 20px;
+            }
+        }
+
+        .nav-menu li {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            padding: 100px 20px 50px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+        }
+
+        .image-circle {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background-image: url('m2.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            margin-right: 40px;
+        }
+
+        .name-container {
+            flex: 1;
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .name-container h1 {
+            font-size: 4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0 0 20px 0;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bio-summary {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            margin: 0;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .name-container {
+                text-align: center;
+            }
+            
+            .name-container h1 {
+                font-size: 3rem;
+            }
+            
+            .bio-summary {
+                text-align: center;
+            }
+        }
+
+        /* Hidden sections */
+        .hidden-section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Skills Grid Section */
+        .skills-grid {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .skill-card:nth-child(1) {
+            transform: translateY(-10px);
+        }
+
+        .skill-card:nth-child(2) {
+            transform: translateY(15px);
+        }
+
+        .skill-card:nth-child(3) {
+            transform: translateY(-5px);
+        }
+
+        .skill-card:nth-child(4) {
+            transform: translateY(20px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0 0 15px 0;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+            font-size: 14px;
+        }
+
+        .skill-card .more-link {
+            color: #70a1ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .skill-card .more-link:hover {
+            color: #5882ff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-card:nth-child(n) {
+                transform: none;
+            }
+            
+            .skill-card:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Social Media Section */
+        .social-media-section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover .social-icon {
+            filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(200deg);
+        }
+
+        @media (max-width: 768px) {
+            .social-container {
+                gap: 20px;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .social-icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        /* CV Section Styles */
+        .cv-section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-container {
+            max-width: 100%;
+        }
+
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cv-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .cv-button {
+            background: linear-gradient(135deg, #4a4a4a, #6a6a6a);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #5a5a5a, #7a7a7a);
+        }
+
+        .cv-content {
+            color: #cccccc;
+        }
+
+        .cv-section-block {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cv-section-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .cv-section-title {
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0 0 20px 0;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cv-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            font-size: 14px;
+        }
+
+        .contact-item a, .cv-content a {
+            color: #70a1ff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover, .cv-content a:hover {
+            color: #5882ff;
+            text-decoration: underline;
+        }
+
+        .cv-summary {
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .cv-experience-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .company {
+            font-weight: 600;
+            color: white;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        .experience-details {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .experience-details li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .cv-education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .degree {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .institution {
+            color: white;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .education-focus {
+            margin: 0;
+            font-style: italic;
+            color: #aaa;
+        }
+
+        .skills-grid-cv {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h5 {
+            color: white;
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            margin: 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .cv-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cv-contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid-cv {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+            }
+
+            .cv-section {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+
+            .cv-container {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .cv-header {
+                margin-bottom: 20px !important;
+                padding-top: 0 !important;
+            }
+
+            .cv-content {
+                color: black !important;
+            }
+
+            .cv-button {
+                display: none !important;
+            }
+
+            .cv-section-title, .job-title, .degree, .skill-category h5 {
+                color: black !important;
+                -webkit-text-fill-color: black !important;
+            }
+
+            .company, .institution, .contact-item a, .cv-content a {
+                color: #333 !important;
+                text-decoration: none !important;
+            }
+
+            /* Hide all other sections when printing CV */
+            .hero-section, .skills-grid, .social-media-section, 
+            .works-section:not(#cv), nav, .randomText {
+                display: none !important;
+            }
+
+            /* Ensure only CV content is visible */
+            #cv {
+                display: block !important;
+            }
+        }
+
+        /* VR Projects Grid Styles */
+        .vr-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .vr-project-item {
+            background: rgba(45, 45, 45, 0.8);
+            border-radius: 15px;
+            padding: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .vr-project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .project-title {
+            color: white;
+            font-size: 1.3rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 20px 20px 15px 20px;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 0 0 15px 15px;
+            cursor: pointer;
+        }
+
+        .project-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+
+        .project-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover .project-thumbnail {
+            opacity: 0;
+        }
+
+        .video-container:hover .project-video {
+            opacity: 1;
+        }
+
+        /* YouTube iframe styling */
+        .project-youtube {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .youtube-container:hover .project-youtube {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .youtube-container:hover .project-thumbnail {
+            opacity: 0;
+        }
+
+        /* Play icon overlay */
+        .video-container::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .video-container:hover::after {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .vr-projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-container {
+                height: 200px;
+            }
+
+            .project-title {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+        }
+
+        /* VR Project Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
 
-        nav ul li {
-            margin: 0 15px;
+        .modal-container {
+            background: rgba(25, 25, 25, 0.95);
+            border-radius: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 900px;
+            overflow-y: auto;
+            position: relative;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        nav ul li a {
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             color: white;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 8px 16px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
         }
 
-        nav ul li a:hover {
-            background-color: #575757;
-            border-radius: 4px;
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .modal-content {
+            padding: 40px;
+            color: white;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .modal-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: white;
+        }
+
+        .modal-date {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 0 20px 0;
+        }
+
+        .modal-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(65, 65, 65, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-description {
+            margin-top: 40px;
+        }
+
+        .description-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .description-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .description-right {
+            flex-direction: row;
+        }
+
+        .description-left {
+            flex-direction: row-reverse;
+        }
+
+        .description-text {
+            flex: 1;
+        }
+
+        .description-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .description-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .description-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-container {
+                width: 95vw;
+                margin: 20px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-header h2 {
+                font-size: 2rem;
+            }
+
+            .description-section {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+
+            .description-left,
+            .description-right {
+                flex-direction: column !important;
+            }
+
+            .description-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -143,23 +1149,415 @@
       <p>CVzone inverse kinematics sound design </p>
 
   </div>
-  	<div class= "">
-     <nav>
-          <ul>
-              <li><h1>Jasmine Darman</h1></li>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-          </ul>
-      </nav>
-     </div>
-    <div class="header">
-      
-       
-        <p>About me: I make video games. This portfolio showcases my work in p5.js from my Digital Media master's program.</p>
-    </div>
-    <div class="work-container" id="portfolio"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button class="back-button" id="back-button" style="display: none;">
+                <span class="back-arrow">←</span>
+                <span class="back-text">Back</span>
+            </button>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#cv" class="nav-link">CV</a></li>
+            <li><a href="#vr-works" class="nav-link">VR Works</a></li>
+            <li><a href="#p5js-works" class="nav-link">P5Js Works</a></li>
+            <li><a href="#unity-works" class="nav-link">Unity 2D</a></li>
+            <li><a href="#python-works" class="nav-link">Python</a></li>
+        </ul>
+    </nav>
+    <!-- Hero Section with Name -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <div class="image-circle"></div>
+                </div>
+                <div class="name-container">
+                    <h1>Jasmine Darman</h1>
+                    <p class="bio-summary">
+                        Jasmine Darman is a game designer specializing in virtual reality immersion, game design education, and fantasy-driven storylines. She has worked as a project manager on the educational VR platform Reality Flow and has taught game design using VR technology after school at Evan's high school. She has assisted with management and workshops for UCF's downtown maker space, allowing students to gain knowledge on motion capture, 3D printing, and laser cutting for prototyping. She currently works as an instructor of record at UCF for their undergraduate program, teaching students how to use the Unity game engine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid Section -->
+    <section class="skills-grid">
+        <div class="grid-container">
+            <div class="skill-card section-link" data-target="vr-works">
+                <h3>VR Works</h3>
+                <p>Developed immersive VR experiences for multiplayer, roomscale, and educational applications. Taught game design curriculum at Evan's High School using VR technology.</p>
+            </div>
+            <div class="skill-card section-link" data-target="p5js-works">
+                <h3>P5Js</h3>
+                <p>Built interactive systems using JavaScript's p5.js framework, including dialogue trees, collision detection, and grid movement mechanics. Published cross-platform games on Itch.io for multiple devices.</p>
+            </div>
+            <div class="skill-card section-link" data-target="unity-works">
+                <h3>2D Unity Engine</h3>
+                <p>Created immersive 2D games using Unity's URP 2D lighting and sprite editor packages. Developed multiplayer games, nonlinear narratives, and rapid mechanic prototypes.</p>
+            </div>
+            <div class="skill-card section-link" data-target="python-works">
+                <h3>Python Prototypes</h3>
+                <p>Built automation tools using Python libraries like CVZone, Discord APIs, and data processing frameworks. Created motion-detection camera scripts, Discord bots for user data management, and weather generation using Perlin noise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+        <div class="social-container">
+            <a href="https://www.linkedin.com/in/jasmine-darman/" target="_blank" class="social-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://little-fifth.itch.io/" target="_blank" class="social-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/itchdotio.svg" alt="Itch.io" class="social-icon">
+            </a>
+            <a href="https://github.com/Linocut" target="_blank" class="social-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/fifth_insider" target="_blank" class="social-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@LittleFifth" target="_blank" class="social-link">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+    </section>
+
+    <!-- CV Section - Hidden by default -->
+    <section id="cv" class="cv-section hidden-section">
+        <div class="cv-container">
+            <div class="cv-header">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <div class="cv-actions">
+                    <button id="download-cv" class="cv-button">Download PDF</button>
+                    <button id="print-cv" class="cv-button">Print CV</button>
+                </div>
+            </div>
+            
+            <div class="cv-content">
+                <!-- Contact Info -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Contact Information</h3>
+                    <div class="cv-contact-grid">
+                        <div class="contact-item">
+                            <strong>Email:</strong> <span id="cv-email">Jelloismynick@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jasmine-darman/" target="_blank">jasmine-darman</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>GitHub:</strong> <a href="https://github.com/Linocut" target="_blank">Linocut</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Portfolio:</strong> <a href="#home" class="nav-link">This Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Professional Summary</h3>
+                    <p class="cv-summary">
+                        Game Designer/Programmer/Educator specializing in virtual reality immersion, game design education, and fantasy-driven storylines. Main focus on programming and development within Unity Engine. Experienced in teaching, project management, and developing educational VR platforms.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Professional Experience</h3>
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Graduate Teaching Associate</h4>
+                            <span class="company">University of Central Florida</span>
+                            <span class="date">Aug 2025 - Current</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Teaching UCF's Computer as a Medium course for undergraduate game design students</li>
+                            <li>Heavy grading work and troubleshooting technology issues in <em>Unity</em></li>
+                            <li>Delivering lectures on <em>Unity</em> and managing conflicts within college-level classroom</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Maker Space Assistant</h4>
+                            <span class="company">UCF Downtown Makerspace</span>
+                            <span class="date">May 2024 - Aug 2025</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Managing part-time UCF's downtown Makerspace operations</li>
+                            <li>Planning and advertising workshop events, instructing students on various makerspace tools</li>
+                            <li>Managing security, passwords, and technology including <em>OptiTrack</em>, <em>Ultimakers</em>, <em>Glowforge</em>, <em>Form 3</em>, <em>Fusion Edge</em>, <em>Weller Stations</em>, and XR devices</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Intern for RealityFlow, OPS Student</h4>
+                            <span class="company">UCF / RealityFlow</span>
+                            <span class="date">Feb 2024 - May 2024</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Developing educational materials for UCF Summer Workshop</li>
+                            <li>Overseeing computer science majors developing educational software <em>Reality Flow</em></li>
+                            <li>Created template learning builds with <em>Unity's</em> visual scripting and XR, PowerPoints, and time-sensitive lesson plans</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Volunteer After-School Educator</h4>
+                            <span class="company">Evan's High School through VR Creators</span>
+                            <span class="date">Oct 2022 - Feb 2024</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Teaching after school through VR Creators program</li>
+                            <li>Managing, cleaning, and setting up VR headsets from UCF to Evan's</li>
+                            <li>Planned lessons around current technology, students' understanding, and game design concepts</li>
+                            <li>Program evolved into a summer UCF-hosted workshop</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Education</h3>
+                    <div class="cv-education-item">
+                        <div class="education-header">
+                            <h4 class="degree">Master's in Digital Media</h4>
+                            <span class="institution">University of Central Florida</span>
+                            <span class="date">Expected Spring 2026</span>
+                        </div>
+                        <p class="education-focus">Focus on interactive media, game design, and digital storytelling</p>
+                    </div>
+                    <div class="cv-education-item">
+                        <div class="education-header">
+                            <h4 class="degree">Bachelor's of Game Design in Games and Interactive Media</h4>
+                            <span class="institution">University of Central Florida</span>
+                            <span class="date">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Public Works / Projects -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Public Works & Projects</h3>
+                    
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title"><em>Sundrop</em></h4>
+                            <span class="company">Art Director, Artist</span>
+                            <span class="date">Jan 2024</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Awarded 3rd Place in the <a href="https://fiea.ucf.edu" target="_blank">FIEA Game Jam</a></li>
+                            <li>Oversaw visual direction and color design to evoke post-apocalyptic fantasy atmosphere</li>
+                            <li>Emphasized tonal cohesion and thematic clarity</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title"><em>Cat Meoir: Feline Detective</em></h4>
+                            <span class="company">Programmer</span>
+                            <span class="date">May 2024</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Developed specialized gameplay systems including custom save framework</li>
+                            <li>Implemented object recognition for in-game photography</li>
+                            <li>Created user interface functionality to enhance player interaction and usability</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title"><em>VRK Haunted House</em></h4>
+                            <span class="company">Project Manager, Programmer, Designer, Sound Designer, Event Manager</span>
+                            <span class="date">Nov 2023</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Led volunteer team from UCF's Virtual Reality Knights to produce room-scale VR experience</li>
+                            <li>Managed development milestones and coordinated event presentation at UCF Student Union</li>
+                            <li>Contributed to level design, sound production, and overall creative direction</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Buggy Virus</h4>
+                            <span class="company">Project Manager, Programmer, Gameplay Designer</span>
+                            <span class="date">Jul 2023</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Directed week-long Major Game Jam project</li>
+                            <li>Oversaw task distribution, progress tracking, and core gameplay implementation</li>
+                            <li>Designed mechanics that build progressive intensity while maintaining balanced gameplay loop</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Evil Overlord: Soon-to-be Ruler of All</h4>
+                            <span class="company">Writer, Art Director, Artist</span>
+                            <span class="date">Jun 2023</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Authored branching narrative paths for nonlinear storytelling experience</li>
+                            <li>Led art direction with emphasis on vivid, saturated hues—purples and reds</li>
+                            <li>Set against darkly atmospheric environment to enhance thematic contrast</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">The Potions Predicament</h4>
+                            <span class="company">Writer, Art Director, Artist</span>
+                            <span class="date">Apr 2023</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Served as lead writer, crafting dialogue to establish engaging character dynamics</li>
+                            <li>Directed art style toward cohesive fantasy aesthetic</li>
+                            <li>Integrated character design, spatial composition, and lighting to support narrative tone</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <div class="experience-header">
+                            <h4 class="job-title">Deep Sea Scourge</h4>
+                            <span class="company">Project Manager, Programmer</span>
+                            <span class="date">Mar 2023</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Supervised six-person development team</li>
+                            <li>Managed workflow through <em>ClickUp</em> and contributed core programming features</li>
+                            <li>Developed action-oriented isometric game</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Technical Skills</h3>
+                    <div class="skills-grid-cv">
+                        <div class="skill-category">
+                            <h5>Game Engines</h5>
+                            <p><a href="https://unity.com" target="_blank">Unity</a> <em>(Primary Focus)</em></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Programming Languages</h5>
+                            <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">C#</a>, <a href="https://python.org" target="_blank">Python</a>, <a href="https://javascript.info" target="_blank">JavaScript</a></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Version Control</h5>
+                            <p><a href="https://github.com" target="_blank">GitHub</a></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Design & Art Tools</h5>
+                            <p><a href="https://adobe.com" target="_blank">Adobe Suite</a>, <a href="https://autodesk.com/maya" target="_blank">Maya</a>, <a href="https://blender.org" target="_blank">Blender</a></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>VR/XR Technology</h5>
+                            <p>Unity XR, Visual Scripting, VR Headset Management</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Makerspace Technology</h5>
+                            <p><a href="https://optitrack.com" target="_blank">OptiTrack</a>, <a href="https://ultimaker.com" target="_blank">Ultimakers</a>, <a href="https://glowforge.com" target="_blank">Glowforge</a>, <a href="https://formlabs.com/3d-printers/form-3/" target="_blank">Form 3</a>, <a href="https://www.epiloglaser.com/?gclid=CjwKCAjwgISIBhBfEiwALE19STYjA-64AM_N8NeqOVJtV7VyiJlHs2PFE9KQCdyh7-LVpyOyMe7lFBoCnq4QAvD_BwE" target="_blank">Fusion Edge</a>, <a href="https://www.weller-tools.com" target="_blank">Weller Stations</a></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Project Management</h5>
+                            <p><a href="https://clickup.com" target="_blank">ClickUp</a>, <em>Team Leadership</em>, <em>Workshop Planning</em></p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Specializations</h5>
+                            <p>Game Design Education, VR Development, Narrative Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Works Section - Hidden by default -->
+    <section id="vr-works" class="works-section hidden-section">
+        <div class="section-container">
+            <h2 class="section-title">VR Works</h2>
+            <p style="text-align: center; color: #cccccc; margin-bottom: 40px;">
+                Immersive virtual reality experiences focusing on education, multiplayer interaction, and roomscale environments.
+            </p>
+            
+            <div class="vr-projects-grid">
+                <div class="vr-project-item" data-project="vrk-haunted-house">
+                    <h3 class="project-title">Virtual Reality Knights Haunted House</h3>
+                    <div class="video-container">
+                        <img src="VRKScreenShot.png" alt="VRK Haunted House" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="VRKClip.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="vr-project-item" data-project="multiplayer-vr">
+                    <h3 class="project-title">Multiplayer VR Experience</h3>
+                    <div class="video-container">
+                        <img src="MuiltiplayerSreenShot.PNG" alt="Multiplayer VR Experience" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="MuiltiplayerVRClip.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="vr-project-item" data-project="educational-workshop">
+                    <h3 class="project-title">Educational VR Workshop</h3>
+                    <div class="video-container">
+                        <img src="ProgrammingTeach.PNG" alt="Educational VR Workshop" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="EducationalPowerPoint.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unity Works Section - Hidden by default -->
+    <section id="unity-works" class="works-section hidden-section">
+        <div class="section-container">
+            <h2 class="section-title">2D Unity Engine</h2>
+            <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
+                2D games utilizing URP lighting and advanced sprite editing for immersive gameplay experiences.
+            </p>
+            <!-- Unity content will go here -->
+        </div>
+    </section>
+
+    <!-- Python Works Section - Hidden by default -->
+    <section id="python-works" class="works-section hidden-section">
+        <div class="section-container">
+            <h2 class="section-title">Python Prototypes</h2>
+            <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
+                Creative prototypes using computer vision, data handling, and automation libraries.
+            </p>
+            <!-- Python content will go here -->
+        </div>
+    </section>
+
+    <!-- p5js Works Section - Hidden by default -->
+    <section id="p5js-works" class="works-section hidden-section">
+        <div class="section-container">
+            <h2 class="section-title">p5js Works</h2>
+            <div class="work-container" id="portfolio"></div>
+        </div>
+    </section>
     <script>
         const workCategories = [
             { name: "Dialog Systems", color: "#85c1ae", works: [
@@ -172,6 +1570,248 @@
                 { title: "Spaceland Coded", link: "https://editor.p5js.org/Linocut/full/i2lsaI5dY", github: "https://github.com/Linocut/P5js-3D", description: "A VR art experience exploring motion and lighting." }
             ]}
         ];
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Back button setup
+        const backButton = document.getElementById('back-button');
+        backButton.addEventListener('click', goBack);
+
+        // Navigation history tracking
+        let navigationHistory = ['home'];
+        let currentSection = 'home';
+
+        // Back button functionality
+        function updateBackButton() {
+            const backButton = document.getElementById('back-button');
+            if (navigationHistory.length > 1) {
+                backButton.style.display = 'flex';
+            } else {
+                backButton.style.display = 'none';
+            }
+        }
+
+        function goBack() {
+            if (navigationHistory.length > 1) {
+                navigationHistory.pop(); // Remove current section
+                const previousSection = navigationHistory[navigationHistory.length - 1];
+                showSection(previousSection, false); // false means don't add to history
+                currentSection = previousSection;
+                updateBackButton();
+            }
+        }
+
+        // Section navigation functionality
+        function showSection(targetId, addToHistory = true) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                if (section.classList.contains('hidden-section')) {
+                    section.style.display = 'none';
+                } else if (section.id !== targetId && section.id !== '') {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Show target section
+            if (targetId === 'home' || targetId === '') {
+                // Show home sections
+                document.querySelector('.hero-section').style.display = 'block';
+                document.querySelector('.skills-grid').style.display = 'block';
+                document.querySelector('.social-media-section').style.display = 'block';
+            } else {
+                // Hide home sections and show target
+                document.querySelector('.hero-section').style.display = 'none';
+                document.querySelector('.skills-grid').style.display = 'none';
+                document.querySelector('.social-media-section').style.display = 'none';
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            }
+
+            // Track navigation history
+            if (addToHistory && targetId !== currentSection) {
+                navigationHistory.push(targetId);
+                currentSection = targetId;
+                updateBackButton();
+            }
+        }
+
+        // Handle navigation links
+        document.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                showSection(targetId);
+                
+                // Close hamburger menu
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Handle skill card clicks
+        document.querySelectorAll('.skill-card.section-link').forEach((card) => {
+            card.addEventListener('click', (e) => {
+                const targetId = card.getAttribute('data-target');
+                showSection(targetId);
+            });
+        });
+
+        // Initialize - show home by default
+        showSection('home');
+
+        // CV-specific functionality
+        function initializeCVSection() {
+            const downloadBtn = document.getElementById('download-cv');
+            const printBtn = document.getElementById('print-cv');
+
+            // Download CV as PDF functionality
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', () => {
+                    // For now, this will print to PDF - in a real scenario you'd implement PDF generation
+                    window.print();
+                });
+            }
+
+            // Print CV functionality  
+            if (printBtn) {
+                printBtn.addEventListener('click', () => {
+                    // Ensure CV section is visible for printing
+                    const cvSection = document.getElementById('cv');
+                    
+                    if (cvSection && cvSection.style.display !== 'none') {
+                        // Already showing CV, print directly
+                        window.print();
+                    } else {
+                        // Show CV section temporarily for printing
+                        showSection('cv');
+                        setTimeout(() => {
+                            window.print();
+                        }, 200);
+                    }
+                });
+            }
+
+            // Update contact email dynamically
+            const emailElement = document.getElementById('cv-email');
+            if (emailElement) {
+                emailElement.textContent = 'Jelloismynick@gmail.com';
+            }
+        }
+
+        // Enhanced section navigation with CV support
+        function updateSectionVisibility() {
+            // Update navigation active states
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current section link
+            const currentHash = window.location.hash || '#home';
+            const activeLink = document.querySelector(`a[href="${currentHash}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // CV-specific data management
+        const cvData = {
+            contact: {
+                email: 'Jelloismynick@gmail.com',
+                phone: '', // Add if needed
+                location: '' // Add if needed
+            },
+            updateContactInfo: function(email, phone = '', location = '') {
+                this.contact.email = email;
+                this.contact.phone = phone;
+                this.contact.location = location;
+                
+                // Update DOM elements
+                const emailElement = document.getElementById('cv-email');
+                if (emailElement) emailElement.textContent = email;
+            }
+        };
+
+        // Initialize CV functionality when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCVSection();
+            updateSectionVisibility();
+            updateBackButton(); // Initialize back button visibility
+        });
+
+        // Initialize CV section immediately
+        initializeCVSection();
+
+        // VR Projects video hover functionality
+        function initializeVRProjects() {
+            const videoContainers = document.querySelectorAll('.video-container');
+            console.log('Found video containers:', videoContainers.length);
+            
+            videoContainers.forEach((container, index) => {
+                const video = container.querySelector('.project-video');
+                const thumbnail = container.querySelector('.project-thumbnail');
+                
+                console.log(`Container ${index}:`, {
+                    hasVideo: !!video,
+                    hasThumbnail: !!thumbnail,
+                    videoSrc: video ? video.querySelector('source')?.src : 'none'
+                });
+                
+                // Handle regular video containers
+                if (video && thumbnail) {
+                    container.addEventListener('mouseenter', () => {
+                        console.log(`Hovering over container ${index}`);
+                        video.currentTime = 0; // Start from beginning
+                        video.style.opacity = '1';
+                        thumbnail.style.opacity = '0';
+                        video.play().catch(e => {
+                            console.log('Video autoplay prevented:', e);
+                        });
+                    });
+                    
+                    container.addEventListener('mouseleave', () => {
+                        console.log(`Leaving container ${index}`);
+                        video.pause();
+                        video.currentTime = 0; // Reset to beginning
+                        video.style.opacity = '0';
+                        thumbnail.style.opacity = '1';
+                    });
+                    
+                    // Handle video loading
+                    video.addEventListener('loadeddata', () => {
+                        console.log('Video loaded:', video.src);
+                    });
+                    
+                    video.addEventListener('error', (e) => {
+                        console.log('Video error:', video.src, e);
+                    });
+                }
+            });
+        }
+
+        // Initialize VR projects when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeVRProjects();
+        });
+
+        // Re-initialize when VR section becomes visible
+        const originalShowSection = showSection;
+        showSection = function(targetId) {
+            originalShowSection(targetId);
+            if (targetId === 'vr-works') {
+                setTimeout(() => {
+                    initializeVRProjects();
+                }, 100);
+            }
+        };
 
         const portfolioContainer = document.getElementById("portfolio");
 
@@ -205,6 +1845,156 @@
                 workList.style.display = workList.style.display === "block" ? "none" : "block";
             });
         });
+
+        // VR Project Modal Data
+        const vrProjectData = {
+            'vrk-haunted-house': {
+                title: 'Virtual Reality Knights Haunted House',
+                date: 'October 29, 2023',
+                skills: ['Unity 3D', 'C# Scripting', 'VR Development', 'OpenXR Toolkit', 'Roomscale Design', 'Event Coordination'],
+                descriptions: [
+                    {
+                        text: 'Led development of a collaborative VR horror experience for UCF\'s Virtual Reality Knights RSO, where all models, sounds, and code were created by students and alumni. Managed event logistics including determining maximum roomscale allowance for Quest 2/3 headsets within a 4x6 meter space. Using the club president\'s base model for size comparisons, I scaled and designed levels to work within these constraints while creating an immersive experience.',
+                        image: 'roomsize.png'
+                    },
+                    {
+                        text: 'Programmed dialog systems, jumpscares, scene transitions, and strategic level design that utilized space limitations as natural barriers while guiding players through a back-and-forth critical path to simulate a larger environment. Successfully coordinated the live event at UCF Student Union with three simultaneous play spaces using borrowed curtains and floor markers. Later adapted into a standalone joystick-controlled version for itch.io release with full credits showcasing each team member\'s contributions.',
+                        image: 'creditspicture.png'
+                    }
+                ]
+            },
+            'multiplayer-vr': {
+                title: 'Multiplayer VR Experience',
+                date: 'December 6, 2023',
+                skills: ['OpenXR Toolkit', 'Ubiqu Networking', 'Escape Room Design', 'Puzzle Design', 'GitHub'],
+                descriptions: [
+                    {
+                        text: 'Collaborated in a 6-person team to develop a networked VR escape room prototype featuring a progression system that unlocks a final puzzle through interconnected challenges. Each puzzle was designed to lead naturally into the next, creating a cohesive multiplayer experience using Ubiqu\'s networking framework for seamless player interaction across Meta Quest headsets.',
+                        image: 'puzzlecase.png'
+                    },
+                    {
+                        text: 'Served as primary programmer ensuring socket interactables functioned properly with Ubiqu\'s networking architecture. Refined existing puzzle designs and implemented original puzzle mechanics while handling technical challenges of deploying APKs to Meta Quest headsets. Managed collaborative development through GitHub branches, conducting code reviews, merging to main, and maintaining proper version control structure for team coordination.',
+                        image: 'plantspuzzle.png'
+                    }
+                ]
+            },
+            'educational-workshop': {
+                title: 'Educational VR Workshop',
+                date: 'August 2024',
+                skills: ['Educational Design', 'VR Training', 'Interactive Learning', 'Unity 3D', 'Curriculum Development'],
+                descriptions: [
+                    {
+                        text: 'Developed a comprehensive VR game design module for high school students at UCF downtown campus, featuring interactive programming tutorials, visual scripting, and hands-on learning experiences that explore industry-standard games. Designed to make complex programming concepts accessible through immersive virtual environments with gradual complexity increase into Unity development.',
+                        image: 'workshopschedule.png'
+                    },
+                    {
+                        text: 'Core curriculum included art asset creation, level design topics, and programming fundamentals. Utilized software such as Bitsy alongside collaborative activities like whiteboard map design sessions. Implemented visual scripting with template scenes to provide students an accessible entry point for creating their own VR worlds and understanding game development workflows.',
+                        image: 'workshopactivity.png'
+                    }
+                ]
+            }
+        };
+
+        // Modal functionality
+        function openVRModal(projectId) {
+            const modal = document.getElementById('vr-project-modal');
+            const data = vrProjectData[projectId];
+            
+            if (!data) return;
+
+            // Populate modal content
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-date').textContent = data.date;
+            
+            // Populate skills
+            const skillsContainer = document.getElementById('modal-skills');
+            skillsContainer.innerHTML = '';
+            data.skills.forEach(skill => {
+                const skillTag = document.createElement('span');
+                skillTag.className = 'skill-tag';
+                skillTag.textContent = skill;
+                skillsContainer.appendChild(skillTag);
+            });
+
+            // Populate descriptions
+            data.descriptions.forEach((desc, index) => {
+                document.getElementById(`description-text-${index + 1}`).textContent = desc.text;
+                document.getElementById(`description-image-${index + 1}`).src = desc.image;
+            });
+
+            // Show modal
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeVRModal() {
+            const modal = document.getElementById('vr-project-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Add event listeners for VR project clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            // VR project click handlers
+            document.querySelectorAll('.vr-project-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const projectId = item.getAttribute('data-project');
+                    openVRModal(projectId);
+                });
+            });
+
+            // Modal close handlers
+            document.getElementById('modal-close').addEventListener('click', closeVRModal);
+            document.getElementById('vr-project-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'vr-project-modal') {
+                    closeVRModal();
+                }
+            });
+
+            // Escape key to close modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeVRModal();
+                }
+            });
+        });
     </script>
+
+    <!-- VR Project Popup Modal -->
+    <div id="vr-project-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close">×</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Project Title</h2>
+                    <p class="modal-date" id="modal-date">Date</p>
+                    <div class="modal-skills" id="modal-skills">
+                        <!-- Skills tags will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="modal-description">
+                    <div class="description-section description-right" id="description-1">
+                        <div class="description-text">
+                            <p id="description-text-1">Description content goes here...</p>
+                        </div>
+                        <div class="description-image">
+                            <img id="description-image-1" src="" alt="Project Image">
+                        </div>
+                    </div>
+                    
+                    <div class="description-section description-left" id="description-2">
+                        <div class="description-text">
+                            <p id="description-text-2">Description content goes here...</p>
+                        </div>
+                        <div class="description-image">
+                            <img id="description-image-2" src="" alt="Project Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
