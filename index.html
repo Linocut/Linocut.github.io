@@ -1900,7 +1900,13 @@
             const modal = document.getElementById('vr-project-modal');
             const data = vrProjectData[projectId];
             
-            if (!data) return;
+            console.log('Opening modal for project:', projectId);
+            console.log('Project data:', data);
+            
+            if (!data) {
+                console.log('No data found for project:', projectId);
+                return;
+            }
 
             // Populate modal content
             document.getElementById('modal-title').textContent = data.title;
@@ -1918,8 +1924,23 @@
 
             // Populate descriptions
             data.descriptions.forEach((desc, index) => {
-                document.getElementById(`description-text-${index + 1}`).textContent = desc.text;
-                document.getElementById(`description-image-${index + 1}`).src = desc.image;
+                const textElement = document.getElementById(`description-text-${index + 1}`);
+                const imageElement = document.getElementById(`description-image-${index + 1}`);
+                
+                textElement.textContent = desc.text;
+                imageElement.src = desc.image;
+                imageElement.alt = data.title + ' - Image ' + (index + 1);
+                
+                // Add error handling for images
+                imageElement.onerror = function() {
+                    console.log(`Failed to load image: ${desc.image}`);
+                    this.style.display = 'none';
+                };
+                
+                imageElement.onload = function() {
+                    console.log(`Successfully loaded image: ${desc.image}`);
+                    this.style.display = 'block';
+                };
             });
 
             // Show modal
