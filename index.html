@@ -941,6 +941,23 @@
             opacity: 0;
         }
 
+        /* Clickable video container */
+        .clickable-video .project-video {
+            pointer-events: auto;
+        }
+
+        .clickable-video.playing .project-thumbnail {
+            opacity: 0;
+        }
+
+        .clickable-video.playing .project-video {
+            opacity: 1;
+        }
+
+        .clickable-video.playing::after {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .vr-projects-grid {
                 grid-template-columns: 1fr;
@@ -1488,9 +1505,6 @@
     <section id="vr-works" class="works-section hidden-section">
         <div class="section-container">
             <h2 class="section-title">VR Works</h2>
-            <p style="text-align: center; color: #cccccc; margin-bottom: 40px;">
-                Immersive virtual reality experiences focusing on education, multiplayer interaction, and roomscale environments.
-            </p>
             
             <div class="vr-projects-grid">
                 <div class="vr-project-item" data-project="vrk-haunted-house">
@@ -1533,10 +1547,52 @@
     <section id="unity-works" class="works-section hidden-section">
         <div class="section-container">
             <h2 class="section-title">2D Unity Engine</h2>
-            <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
-                2D games utilizing URP lighting and advanced sprite editing for immersive gameplay experiences.
-            </p>
-            <!-- Unity content will go here -->
+            
+            <div class="vr-projects-grid">
+                <div class="vr-project-item" data-project="unity-project-1">
+                    <h3 class="project-title">Cat Meoir: Feline Detective</h3>
+                    <div class="video-container">
+                        <img src="CatMeoirScreenshot.png" alt="Cat Meoir" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="CatMeoirClip.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="vr-project-item" data-project="unity-project-2">
+                    <h3 class="project-title">Sundrop</h3>
+                    <div class="video-container">
+                        <img src="SundropScreenshot.png" alt="Sundrop" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="SundropClip.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="vr-project-item" data-project="unity-project-3">
+                    <h3 class="project-title">Evil Overlord</h3>
+                    <div class="video-container">
+                        <img src="EvilOverlordScreenshot.png" alt="Evil Overlord" class="project-thumbnail">
+                        <video class="project-video" muted loop preload="metadata">
+                            <source src="EvilOverlordClip.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="vr-project-item" data-project="unity-project-4">
+                    <h3 class="project-title">Studio Prototype 2</h3>
+                    <div class="video-container clickable-video">
+                        <img src="GameShowCase.PNG" alt="Studio Prototype 2" class="project-thumbnail">
+                        <video class="project-video" preload="metadata" controls>
+                            <source src="PrototypeVideo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1544,10 +1600,6 @@
     <section id="python-works" class="works-section hidden-section">
         <div class="section-container">
             <h2 class="section-title">Python Prototypes</h2>
-            <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
-                Creative prototypes using computer vision, data handling, and automation libraries.
-            </p>
-            <!-- Python content will go here -->
         </div>
     </section>
 
@@ -1765,6 +1817,32 @@
                     videoSrc: video ? video.querySelector('source')?.src : 'none'
                 });
                 
+                // Handle clickable video containers (Studio Prototype 2)
+                if (container.classList.contains('clickable-video')) {
+                    container.addEventListener('click', (e) => {
+                        // Don't trigger if clicking video controls
+                        if (e.target.tagName !== 'VIDEO' && !e.target.closest('video')) {
+                            if (!container.classList.contains('playing')) {
+                                container.classList.add('playing');
+                                video.play();
+                            }
+                        }
+                    });
+                    
+                    video.addEventListener('ended', () => {
+                        container.classList.remove('playing');
+                        video.currentTime = 0;
+                    });
+                    
+                    video.addEventListener('pause', () => {
+                        if (video.currentTime === video.duration || video.currentTime === 0) {
+                            container.classList.remove('playing');
+                        }
+                    });
+                    
+                    return; // Skip hover functionality for clickable videos
+                }
+                
                 // Handle regular video containers
                 if (video && thumbnail) {
                     container.addEventListener('mouseenter', () => {
@@ -1802,11 +1880,11 @@
             initializeVRProjects();
         });
 
-        // Re-initialize when VR section becomes visible
+        // Re-initialize when VR or Unity section becomes visible
         const originalShowSection = showSection;
         showSection = function(targetId) {
             originalShowSection(targetId);
-            if (targetId === 'vr-works') {
+            if (targetId === 'vr-works' || targetId === 'unity-works') {
                 setTimeout(() => {
                     initializeVRProjects();
                 }, 100);
@@ -1848,6 +1926,66 @@
 
         // VR Project Modal Data
         const vrProjectData = {
+            'unity-project-1': {
+                title: 'Cat Meoir: Feline Detective',
+                date: 'May 2024',
+                skills: ['Unity 2D', 'C# Scripting', 'Save System', 'Object Recognition', 'UI/UX Design', 'Photography Mechanics'],
+                descriptions: [
+                    {
+                        text: 'Developed specialized gameplay systems for this detective adventure game, including a custom save framework that tracks player progress across multiple game sessions. Implemented sophisticated object recognition mechanics that allow players to photograph and catalog evidence throughout their investigation.',
+                        image: 'CatMeoirImage1.png'
+                    },
+                    {
+                        text: 'Created comprehensive user interface functionality to enhance player interaction and usability. Designed and programmed the photography system that validates correct objects within the camera frame, integrating seamlessly with the game\'s progression and narrative structure.',
+                        image: 'CatMeoirImage2.png'
+                    }
+                ]
+            },
+            'unity-project-2': {
+                title: 'Sundrop',
+                date: 'January 2024',
+                skills: ['Unity 2D', 'Art Direction', 'URP 2D Lighting', 'Color Design', 'Post-Apocalyptic Aesthetic', 'Game Jam'],
+                descriptions: [
+                    {
+                        text: 'Awarded 3rd Place in the FIEA Game Jam. Served as Art Director overseeing the complete visual direction and color design to evoke a compelling post-apocalyptic fantasy atmosphere. Utilized Unity\'s URP 2D lighting system to create dramatic lighting effects that enhanced the mood and atmosphere.',
+                        image: 'SundropImage1.png'
+                    },
+                    {
+                        text: 'Emphasized tonal cohesion and thematic clarity throughout the visual design. Coordinated with team members to ensure all art assets maintained consistent style and quality. The project showcased effective use of 2D lighting to create depth and atmosphere in a constrained game jam timeline.',
+                        image: 'SundropImage2.png'
+                    }
+                ]
+            },
+            'unity-project-3': {
+                title: 'Evil Overlord: Soon-to-be Ruler of All',
+                date: 'June 2023',
+                skills: ['Unity 2D', 'Narrative Design', 'Branching Dialogue', 'Art Direction', 'Color Theory', 'Nonlinear Storytelling'],
+                descriptions: [
+                    {
+                        text: 'Authored branching narrative paths creating a nonlinear storytelling experience where player choices meaningfully impact the story outcome. Led art direction with emphasis on vivid, saturated hues—particularly purples and reds—to establish the villainous aesthetic and enhance the game\'s dark comedy tone.',
+                        image: 'EvilOverlordImage1.png'
+                    },
+                    {
+                        text: 'Set against a darkly atmospheric environment to enhance thematic contrast between the vibrant character designs and moody backgrounds. Integrated character design, spatial composition, and lighting techniques to support the narrative tone and create a cohesive visual experience that reinforced the player\'s role as an aspiring evil overlord.',
+                        image: 'EvilOverlordImage2.png'
+                    }
+                ]
+            },
+            'unity-project-4': {
+                title: 'Studio Prototype 2',
+                date: 'Fall 2025',
+                skills: ['Unity 2D', 'Two-Player Mechanics', 'UI System Design', 'Animation State Management', 'Sprite Manipulation', 'Collider Systems'],
+                descriptions: [
+                    {
+                        text: 'Prototype 2 of my studio project. My main goal of the finished studio project for semester 1 was to make simplistic mechanics that I would then expand in the second semester. This includes a UI for controlling limb stats, two-player controls, and general attacks that occur.',
+                        image: 'GameShowCase.PNG'
+                    },
+                    {
+                        text: 'This includes win and lose states, animations, and collider changes. The main difficulty navigating this was utilizing flipping sprites to ensure the proper limb is animating, not dependent on flip.',
+                        image: 'GameShowCase.PNG'
+                    }
+                ]
+            },
             'vrk-haunted-house': {
                 title: 'Virtual Reality Knights Haunted House',
                 date: 'October 29, 2023',
@@ -1927,18 +2065,26 @@
                 const textElement = document.getElementById(`description-text-${index + 1}`);
                 const imageElement = document.getElementById(`description-image-${index + 1}`);
                 
+                console.log(`Setting up image ${index + 1}:`, desc.image);
+                console.log('Image element found:', !!imageElement);
+                
                 textElement.textContent = desc.text;
                 imageElement.src = desc.image;
                 imageElement.alt = data.title + ' - Image ' + (index + 1);
                 
+                console.log('Image src set to:', imageElement.src);
+                
                 // Add error handling for images
                 imageElement.onerror = function() {
-                    console.log(`Failed to load image: ${desc.image}`);
+                    console.error(`Failed to load image: ${desc.image}`);
+                    console.error('Full image URL:', this.src);
+                    console.error('Image element:', this);
                     this.style.display = 'none';
                 };
                 
                 imageElement.onload = function() {
                     console.log(`Successfully loaded image: ${desc.image}`);
+                    console.log('Full image URL:', this.src);
                     this.style.display = 'block';
                 };
             });
@@ -1954,9 +2100,9 @@
             document.body.style.overflow = 'auto'; // Restore scrolling
         }
 
-        // Add event listeners for VR project clicks
+        // Add event listeners for VR and Unity project clicks
         document.addEventListener('DOMContentLoaded', () => {
-            // VR project click handlers
+            // VR and Unity project click handlers
             document.querySelectorAll('.vr-project-item').forEach(item => {
                 item.addEventListener('click', (e) => {
                     const projectId = item.getAttribute('data-project');
