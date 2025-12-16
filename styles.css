@@ -519,6 +519,14 @@ nav {
     transform: rotate(-12deg);
 }
 
+.solo-badge {
+    background: rgba(155, 89, 182, 0.9);
+    color: white;
+    border: 1px solid rgba(155, 89, 182, 1);
+    top: 35px;
+    transform: rotate(-12deg);
+}
+
 .video-container {
     position: relative;
 }

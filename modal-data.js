@@ -234,10 +234,110 @@ const vrProjectData = {
     }
 };
 
+// P5.js Project Modal Data
+const p5jsProjectData = {
+    'p5js-project-1': {
+        title: 'Glaucia Interview',
+        date: 'April 2023',
+        skills: ['p5.js', 'JavaScript', 'Object-Oriented Programming', 'Dialog Systems', 'Interactive Fiction', 'Game Design'],
+        descriptions: [
+            {
+                text: 'Developed an innovative object-oriented approach to dialog systems using p5.js. This project showcases advanced JavaScript programming techniques applied to interactive storytelling, featuring a comprehensive interview simulation with branching conversation paths.',
+                image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                text: 'Implemented sophisticated state management and dialog tree structures that allow for dynamic character interactions. The system includes response tracking, character emotion states, and narrative progression mechanics that create an engaging interactive experience.',
+                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            }
+        ]
+    },
+    'p5js-project-2': {
+        title: 'Up and Down',
+        date: 'June 2023',
+        skills: ['p5.js', 'Collision Detection', 'Animation Systems', 'Map Design', 'Grid-Based Movement', 'Game Mechanics'],
+        descriptions: [
+            {
+                text: 'Extended dialog system framework with advanced collision detection, smooth animation systems, and dynamic map transitions. This grid-based adventure game demonstrates complex state management and player interaction mechanics within the p5.js environment.',
+                image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                text: 'Features include precision collision detection algorithms, fluid character movement animations, and seamless map-to-map transitions. The project showcases advanced programming techniques including object pooling, efficient rendering systems, and modular code architecture.',
+                image: 'https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            }
+        ]
+    },
+    'p5js-project-3': {
+        title: 'Spaceland Coded',
+        date: 'September 2023',
+        skills: ['p5.js', '3D Graphics', 'VR Integration', 'Motion Graphics', 'Lighting Systems', 'WebGL'],
+        descriptions: [
+            {
+                text: 'Created an immersive VR art experience that explores the intersection of motion, lighting, and interactive 3D graphics. This project pushes the boundaries of what\'s possible with p5.js, incorporating advanced WebGL techniques and VR compatibility.',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                text: 'Features dynamic lighting systems that respond to user movement, procedural motion graphics, and optimized 3D rendering for VR headsets. The experience combines artistic vision with technical innovation to create an engaging virtual environment.',
+                image: 'https://images.unsplash.com/photo-1633218388467-539651dcf81a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            }
+        ]
+    }
+};
+
+// Python Project Modal Data
+const pythonProjectData = {
+    'python-project-1': {
+        title: 'Motion Detection Camera System',
+        date: 'February 2024',
+        skills: ['Python', 'CVZone', 'OpenCV', 'Computer Vision', 'Real-time Processing', 'Motion Detection'],
+        descriptions: [
+            {
+                text: 'Motion detection system using Python and CVZone libraries.',
+                image: ''
+            },
+            {
+                text: 'Real-time video analysis with background subtraction and motion tracking.',
+                image: ''
+            }
+        ]
+    },
+    'python-project-2': {
+        title: 'Discord User Management Bot',
+        date: 'January 2024',
+        skills: ['Python', 'Discord API', 'Database Management', 'User Authentication', 'API Integration', 'Bot Development'],
+        descriptions: [
+            {
+                text: 'Discord bot for automated user data management and community moderation.',
+                image: ''
+            },
+            {
+                text: 'Database integration with user verification and activity tracking.',
+                image: ''
+            }
+        ]
+    },
+    'python-project-3': {
+        title: 'Procedural Weather Generation',
+        date: 'March 2024',
+        skills: ['Python', 'Perlin Noise', 'Data Processing', 'Algorithm Design', 'Procedural Generation', 'Weather Simulation'],
+        descriptions: [
+            {
+                text: 'Weather generation system using Perlin noise algorithms.',
+                image: ''
+            },
+            {
+                text: 'Mathematical models for atmospheric simulation and weather patterns.',
+                image: ''
+            }
+        ]
+    }
+};
+
 // Modal functionality
 function openVRModal(projectId) {
     const modal = document.getElementById('vr-project-modal');
-    const data = vrProjectData[projectId];
+    
+    // Try to find data in different project collections
+    let data = vrProjectData[projectId] || p5jsProjectData[projectId] || pythonProjectData[projectId];
     
     console.log('Opening modal for project:', projectId);
     console.log('Project data:', data);

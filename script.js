@@ -359,7 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSectionVisibility();
     updateBackButton();
     initializeVRProjects();
-    initializeP5jsPortfolio();
     initializeModalListeners();
 });
 
