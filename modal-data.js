@@ -77,6 +77,21 @@ const vrProjectData = {
             }
         ]
     },
+    'unity-project-6': {
+        title: 'Buggy Virus',
+        date: 'July 2023',
+        skills: ['Unity 2D', 'Project Management', 'Gameplay Programming', 'Game Jam', 'Progressive Mechanics', 'Team Leadership'],
+        descriptions: [
+            {
+                text: 'Directed week-long Major Game Jam project, overseeing task distribution and progress tracking while contributing to core gameplay implementation. Managed a multidisciplinary team through rapid development cycles and ensured milestone completion within strict time constraints.',
+                image: 'BuggyVirusImage1.png'
+            },
+            {
+                text: 'Designed mechanics that build progressive intensity while maintaining balanced gameplay loop. Focused on creating engaging difficulty curves that challenge players without overwhelming them, ensuring the viral spread mechanics remain both strategic and accessible.',
+                image: 'BuggyVirusImage2.png'
+            }
+        ]
+    },
     'vrk-haunted-house': {
         title: 'Virtual Reality Knights Haunted House',
         date: 'October 29, 2023',
