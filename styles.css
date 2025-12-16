@@ -499,6 +499,26 @@ nav {
     border: 1px solid rgba(255, 87, 51, 1);
 }
 
+.code-badge {
+    background: rgba(46, 204, 113, 0.9);
+    color: white;
+    border: 1px solid rgba(46, 204, 113, 1);
+}
+
+.art-badge {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    border: 1px solid rgba(231, 76, 60, 1);
+}
+
+.producer-badge {
+    background: rgba(155, 89, 182, 0.9);
+    color: white;
+    border: 1px solid rgba(155, 89, 182, 1);
+    top: 35px;
+    transform: rotate(-12deg);
+}
+
 .video-container {
     position: relative;
 }
