@@ -946,6 +946,14 @@
             pointer-events: auto;
         }
 
+        .clickable-video .project-video::-webkit-media-controls-fullscreen-button {
+            display: block;
+        }
+
+        .clickable-video .project-video::-webkit-media-controls {
+            display: flex !important;
+        }
+
         .clickable-video.playing .project-thumbnail {
             opacity: 0;
         }
@@ -1586,7 +1594,7 @@
                     <h3 class="project-title">Studio Prototype 2</h3>
                     <div class="video-container clickable-video">
                         <img src="GameShowCase.PNG" alt="Studio Prototype 2" class="project-thumbnail">
-                        <video class="project-video" preload="metadata" controls>
+                        <video class="project-video" preload="metadata" controls controlslist="nodownload" disablepictureinpicture="false">
                             <source src="Studio1Prototype.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
