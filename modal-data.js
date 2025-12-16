@@ -15,7 +15,8 @@ const vrProjectData = {
                 text: 'Created comprehensive user interface functionality to enhance player interaction and usability. Designed and programmed the photography system that validates correct objects within the camera frame, integrating seamlessly with the game\'s progression and narrative structure.',
                 image: 'CatMeoirImage2.png'
             }
-        ]
+        ],
+        youtubeVideo: 'https://www.youtube.com/embed/N59pJ-sAbm0?si=7Ef_mN7XWPKzuiZO&enablejsapi=1'
     },
     'unity-3d-project-2': {
         title: 'Deep Sea Scourge',
@@ -152,7 +153,8 @@ const vrProjectData = {
                 text: 'Created immersive 3D environments and user interface functionality to enhance player interaction and usability, focusing on intuitive controls for the photography system. Designed seamless integration between the detective mechanics and the save system to provide a cohesive gameplay experience.',
                 image: 'CatMeoirImage2.png'
             }
-        ]
+        ],
+        youtubeVideo: 'https://www.youtube.com/embed/N59pJ-sAbm0?si=7Ef_mN7XWPKzuiZO&enablejsapi=1'
     },
     'unity-3d-project-2': {
         title: 'Deep Sea Scourge',
@@ -166,6 +168,22 @@ const vrProjectData = {
             {
                 text: 'Developed action-oriented isometric 3D game focused on reef conservation themes. The reef needs your help to save it! Players use special powers and upgrades to fight evil aquatic bosses in this environmental action adventure.',
                 image: 'DeepSeaScourgeImage2.png'
+            }
+        ],
+        youtubeVideo: 'https://www.youtube.com/embed/EPH6E6oQRhA?si=vKXFFR06OxcbGtwh&enablejsapi=1'
+    },
+    'other-project-1': {
+        title: 'Lost Match',
+        date: 'October 2023',
+        skills: ['Visual Storytelling', 'Comic Design', 'Narrative Adaptation', 'Digital Art', 'Literary Reinterpretation'],
+        descriptions: [
+            {
+                text: 'Created a visual narrative comic that reinterprets Hans Christian Andersen\'s "The Little Match Girl" in a contemporary and dramatically different context. Developed a unique artistic approach that transforms the classic tale through modern storytelling techniques and visual design.',
+                image: 'LostMatchImage1.png'
+            },
+            {
+                text: 'Employed innovative comic design principles to create an engaging short-form narrative experience. The project demonstrates versatility in creative mediums beyond interactive games, showcasing skills in visual storytelling, character design, and thematic reinterpretation.',
+                image: 'LostMatchImage2.png'
             }
         ]
     },

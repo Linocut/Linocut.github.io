@@ -477,6 +477,32 @@ nav {
     }
 }
 
+/* Project Badge Styles */
+.project-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 3px;
+    z-index: 10;
+    transform: rotate(12deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.comic-badge {
+    background: rgba(255, 87, 51, 0.9);
+    color: white;
+    border: 1px solid rgba(255, 87, 51, 1);
+}
+
+.video-container {
+    position: relative;
+}
+
 /* Hidden Sections */
 .hidden-section {
     display: none;
