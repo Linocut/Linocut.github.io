@@ -107,6 +107,22 @@ const vrProjectData = {
             }
         ]
     },
+    'story-of-joe': {
+        title: 'Story of Joe: VR Demo',
+        date: 'September 2023',
+        skills: ['Unity VR', 'Narrative Design', 'VR Exploration', 'Interactive Literature', 'Puzzle Mechanics', 'Immersive Storytelling'],
+        descriptions: [
+            {
+                text: 'Developed an immersive VR experience that combines exploration mechanics with interactive literature elements. Created a narrative-driven demo that allows players to engage with story elements through virtual reality, blending traditional storytelling with modern VR technology.',
+                image: 'StoryOfJoeImage1.png'
+            },
+            {
+                text: 'Integrated puzzle mechanics within the VR environment to enhance player engagement and narrative progression. The demo showcases innovative approaches to mixing exploration with literature, creating a unique experience that demonstrates the potential for VR as a storytelling medium.',
+                image: 'StoryOfJoeImage2.png'
+            }
+        ],
+        youtubeVideo: 'https://www.youtube.com/embed/v6ZdlmrAb_c?si=61pnBim9tYqQ9WaF&enablejsapi=1'
+    },
     'unity-project-6': {
         title: 'Legacy Frequency',
         date: 'August 2023',
