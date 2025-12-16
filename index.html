@@ -944,14 +944,8 @@
         /* Clickable video container */
         .clickable-video .project-video {
             pointer-events: auto;
-        }
-
-        .clickable-video .project-video::-webkit-media-controls-fullscreen-button {
-            display: block;
-        }
-
-        .clickable-video .project-video::-webkit-media-controls {
-            display: flex !important;
+            width: 100%;
+            height: 100%;
         }
 
         .clickable-video.playing .project-thumbnail {
@@ -960,6 +954,7 @@
 
         .clickable-video.playing .project-video {
             opacity: 1;
+            z-index: 10;
         }
 
         .clickable-video.playing::after {
