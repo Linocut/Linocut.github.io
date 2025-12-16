@@ -107,6 +107,22 @@ const vrProjectData = {
             }
         ]
     },
+    'unity-project-6': {
+        title: 'Legacy Frequency',
+        date: 'August 2023',
+        skills: ['Unity 2D', 'Radar Systems', 'Shooter Mechanics', 'Detection Algorithms', 'Strategic Gameplay', 'Browser Optimization'],
+        descriptions: [
+            {
+                text: 'Developed tactical shooter mechanics focused on radar-based detection systems. Players must shoot enemies on the radar while carefully avoiding causing friendly fire, creating a strategic layer that requires precise identification and timing.',
+                image: 'LegacyFrequencyImage1.png'
+            },
+            {
+                text: 'Implemented detection and stealth mechanics that challenge players to focus on what\'s detected versus what remains hidden to progress. The game emphasizes strategic decision-making and careful observation, optimized for browser-based gameplay with responsive controls.',
+                image: 'LegacyFrequencyImage2.png'
+            }
+        ],
+        youtubeVideo: 'https://www.youtube.com/embed/FBfzyeXnOts?si=4KnmAV9GOmuz9f-S&enablejsapi=1'
+    },
     'unity-3d-project-1': {
         title: 'Cat Meoir: Feline Detective',
         date: 'May 2024',
