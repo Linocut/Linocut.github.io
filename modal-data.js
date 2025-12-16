@@ -2,13 +2,13 @@
 
 // VR Project Modal Data
 const vrProjectData = {
-    'unity-project-1': {
+    'unity-3d-project-1': {
         title: 'Cat Meoir: Feline Detective',
         date: 'May 2024',
-        skills: ['Unity 2D', 'C# Scripting', 'Save System', 'Object Recognition', 'UI/UX Design', 'Photography Mechanics'],
+        skills: ['Unity 3D', 'C# Scripting', 'Save System', 'Object Recognition', 'UI/UX Design', 'Photography Mechanics'],
         descriptions: [
             {
-                text: 'Developed specialized gameplay systems for this detective adventure game, including a custom save framework that tracks player progress across multiple game sessions. Implemented sophisticated object recognition mechanics that allow players to photograph and catalog evidence throughout their investigation.',
+                text: 'Developed specialized gameplay systems for this 3D detective adventure game, including a custom save framework that tracks player progress across multiple game sessions. Implemented sophisticated object recognition mechanics that allow players to photograph and catalog evidence throughout their investigation.',
                 image: 'CatMeoirImage1.png'
             },
             {
@@ -17,7 +17,22 @@ const vrProjectData = {
             }
         ]
     },
-    'unity-project-2': {
+    'unity-3d-project-2': {
+        title: 'Deep Sea Scourge',
+        date: 'March 2023',
+        skills: ['Unity 3D', 'Project Management', 'Isometric Design', 'Action Mechanics', 'Team Leadership', 'ClickUp'],
+        descriptions: [
+            {
+                text: 'Supervised six-person development team through comprehensive project management using ClickUp for workflow coordination. Contributed core programming features while maintaining oversight of development milestones and team coordination.',
+                image: 'DeepSeaScourgeImage1.png'
+            },
+            {
+                text: 'Developed action-oriented isometric 3D game focused on reef conservation themes. The reef needs your help to save it! Players use special powers and upgrades to fight evil aquatic bosses in this environmental action adventure.',
+                image: 'DeepSeaScourgeImage2.png'
+            }
+        ]
+    },
+    'unity-project-1': {
         title: 'Sundrop',
         date: 'January 2024',
         skills: ['Unity 2D', 'Art Direction', 'URP 2D Lighting', 'Color Design', 'Post-Apocalyptic Aesthetic', 'Game Jam'],
@@ -32,7 +47,7 @@ const vrProjectData = {
             }
         ]
     },
-    'unity-project-3': {
+    'unity-project-2': {
         title: 'Evil Overlord: Soon-to-be Ruler of All',
         date: 'June 2023',
         skills: ['Unity 2D', 'Narrative Design', 'Branching Dialogue', 'Art Direction', 'Color Theory', 'Nonlinear Storytelling'],
@@ -47,7 +62,7 @@ const vrProjectData = {
             }
         ]
     },
-    'unity-project-4': {
+    'unity-project-3': {
         title: 'Studio Prototype 2',
         date: 'Fall 2025',
         skills: ['Unity 2D', 'Two-Player Mechanics', 'UI System Design', 'Animation State Management', 'Sprite Manipulation', 'Collider Systems'],
@@ -62,7 +77,7 @@ const vrProjectData = {
             }
         ]
     },
-    'unity-project-5': {
+    'unity-project-4': {
         title: 'The Potions Predicament',
         date: 'April 2023',
         skills: ['Unity 2D', 'Narrative Design', 'Dialogue Systems', 'Art Direction', 'Character Design', 'Fantasy Aesthetic', 'Spatial Composition'],
@@ -77,7 +92,7 @@ const vrProjectData = {
             }
         ]
     },
-    'unity-project-6': {
+    'unity-project-5': {
         title: 'Buggy Virus',
         date: 'July 2023',
         skills: ['Unity 2D', 'Project Management', 'Gameplay Programming', 'Game Jam', 'Progressive Mechanics', 'Team Leadership'],
@@ -89,6 +104,36 @@ const vrProjectData = {
             {
                 text: 'Designed mechanics that build progressive intensity while maintaining balanced gameplay loop. Focused on creating engaging difficulty curves that challenge players without overwhelming them, ensuring the viral spread mechanics remain both strategic and accessible.',
                 image: 'BuggyVirusImage2.png'
+            }
+        ]
+    },
+    'unity-3d-project-1': {
+        title: 'Cat Meoir: Feline Detective',
+        date: 'May 2024',
+        skills: ['Unity 3D', 'C# Programming', 'Custom Save System', 'Object Recognition', 'Detective Mechanics', 'Photography System'],
+        descriptions: [
+            {
+                text: 'Developed specialized gameplay systems for this 3D detective adventure game, including a custom save framework that tracks player progress across multiple game sessions. Implemented sophisticated object recognition mechanics that allow players to photograph and catalog evidence throughout their investigation.',
+                image: 'CatMeoirImage1.png'
+            },
+            {
+                text: 'Created immersive 3D environments and user interface functionality to enhance player interaction and usability, focusing on intuitive controls for the photography system. Designed seamless integration between the detective mechanics and the save system to provide a cohesive gameplay experience.',
+                image: 'CatMeoirImage2.png'
+            }
+        ]
+    },
+    'unity-3d-project-2': {
+        title: 'Deep Sea Scourge',
+        date: 'March 2023',
+        skills: ['Unity 3D', 'Project Management', 'Isometric Design', 'Action Mechanics', 'Team Leadership', 'ClickUp'],
+        descriptions: [
+            {
+                text: 'Supervised six-person development team through comprehensive project management using ClickUp for workflow coordination. Contributed core programming features while maintaining oversight of development milestones and team coordination.',
+                image: 'DeepSeaScourgeImage1.png'
+            },
+            {
+                text: 'Developed action-oriented isometric 3D game focused on reef conservation themes. The reef needs your help to save it! Players use special powers and upgrades to fight evil aquatic bosses in this environmental action adventure.',
+                image: 'DeepSeaScourgeImage2.png'
             }
         ]
     },
@@ -197,7 +242,7 @@ function openVRModal(projectId) {
 
     // Show video section if it's Studio Prototype 2
     const modalVideo = document.getElementById('modal-video');
-    if (projectId === 'unity-project-4') {
+    if (projectId === 'unity-project-3') {
         modalVideo.style.display = 'block';
         // Pause the main video when opening modal
         if (player) {
