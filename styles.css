@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+/* Global link styling */
+a {
+    color: rgba(57, 175, 211, 1);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgba(87, 195, 231, 1);
+}
+
 body {
     font-family: "Inter", serif;
     margin: 0;
@@ -243,6 +253,11 @@ nav {
     left: 100%;
 }
 
+/* Disable the white sliding effect for CV section links */
+.cv-content .nav-link::before {
+    display: none;
+}
+
 .nav-link:hover,
 .nav-link.active {
     background: rgba(255, 255, 255, 0.1);
@@ -306,6 +321,110 @@ nav {
     text-align: justify;
 }
 
+.bio-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.learn-more-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid rgba(57, 175, 211, 1);
+    border-radius: 25px;
+    color: rgba(57, 175, 211, 1);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.learn-more-button:hover {
+    background: rgba(57, 175, 211, 0.1);
+    color: rgba(87, 195, 231, 1);
+    border-color: rgba(87, 195, 231, 1);
+    transform: translateY(-2px);
+}
+
+/* About Me Section Styles */
+.about-me-section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    color: white;
+}
+
+.about-me-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me-content {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-me-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgba(57, 175, 211, 1);
+    margin-top: 2rem;
+}
+
+.about-me-text h3:first-child {
+    margin-top: 0;
+}
+
+.about-me-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.email-contact-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.email-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid rgba(57, 175, 211, 1);
+    border-radius: 25px;
+    color: rgba(57, 175, 211, 1);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.email-button:hover {
+    background: rgba(57, 175, 211, 0.1);
+    color: rgba(87, 195, 231, 1);
+    border-color: rgba(87, 195, 231, 1);
+    transform: translateY(-2px);
+}
+
+.email-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.email-button:hover .email-icon {
+    filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(180deg);
+}
+
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;
@@ -323,6 +442,22 @@ nav {
     .bio-summary {
         text-align: center;
     }
+    
+    .bio-button-container {
+        justify-content: center;
+    }
+    
+    .about-me-content {
+        padding: 2rem;
+    }
+    
+    .about-me-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .about-me-text p {
+        font-size: 1rem;
+    }
 }
 
 /* Hidden sections */
@@ -336,7 +471,7 @@ nav {
 
 /* Skills Grid Section */
 .skills-grid {
-    padding: 50px 20px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -599,8 +734,27 @@ nav {
     transform: translateY(-2px);
 }
 
+.modal-fullscreen-link a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: rgba(57, 175, 211, 1);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.modal-fullscreen-link a:hover {
+    background: rgba(57, 175, 211, 0.1);
+    color: rgba(87, 195, 231, 1);
+    transform: translateY(-2px);
+}
+
 .cv-content {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(26, 26, 26, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
@@ -632,7 +786,7 @@ nav {
 
 .contact-item {
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(26, 26, 26, 0.8);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -642,7 +796,7 @@ nav {
 }
 
 .contact-item a {
-    color: #4ecdc4;
+    color: rgba(57, 175, 211, 1);
     text-decoration: none;
 }
 
@@ -659,7 +813,7 @@ nav {
 .cv-experience-item {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(26, 26, 26, 0.8);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -682,7 +836,7 @@ nav {
 
 .company {
     font-size: 1rem;
-    color: #4ecdc4;
+    color: rgba(57, 175, 211, 1);
     font-weight: 500;
 }
 
@@ -710,14 +864,14 @@ nav {
     content: '▶';
     position: absolute;
     left: 0;
-    color: #4ecdc4;
+    color: rgba(57, 175, 211, 1);
     font-size: 0.8rem;
 }
 
 .cv-education-item {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(26, 26, 26, 0.8);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -740,7 +894,7 @@ nav {
 
 .institution {
     font-size: 1rem;
-    color: #4ecdc4;
+    color: rgba(57, 175, 211, 1);
     font-weight: 500;
 }
 
@@ -906,7 +1060,7 @@ nav {
 
     .company,
     .institution {
-        color: #333 !important;
+        color: rgba(57, 175, 211, 1) !important;
     }
 
     .experience-details li {
